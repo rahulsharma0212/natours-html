@@ -10,6 +10,13 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, 0.3);
+  }
+
   &:target {
     opacity: 1;
     visibility: visible;
@@ -35,19 +42,19 @@
     @include respond(tab-port) {
       width: 100%;
     }
-    @include respond(phone){
+    @include respond(phone) {
       display: block;
-    } 
+    }
   }
 
   &__left {
     width: 33.33333%;
     display: table-cell;
 
-    @include respond(phone){
+    @include respond(phone) {
       display: block;
       width: 100%;
-    } 
+    }
   }
   &__right {
     width: 66.66667%;
@@ -65,11 +72,11 @@
     width: 100%;
     @include respond(tab-land) {
       padding: 2rem;
-    } 
-    @include respond(phone){
+    }
+    @include respond(phone) {
       width: 50%;
       float: left;
-    } 
+    }
   }
   &__text {
     font-size: 1.3rem;
@@ -108,11 +115,11 @@
       display: inline-block;
       transition: all 0.2s;
       line-height: 1;
-      @include respond(phone){
+      @include respond(phone) {
         color: $color-primary;
         top: -0.5rem;
         right: 0.5rem;
-      } 
+      }
     }
 
     &:hover {
@@ -120,11 +127,11 @@
     }
   }
 
-   .btn-center{
-    @include respond(phone){
+  .btn-center {
+    @include respond(phone) {
       position: relative;
       left: 50%;
-      transform: translateX(-50%)
-    } 
-   }
+      transform: translateX(-50%);
+    }
+  }
 }
