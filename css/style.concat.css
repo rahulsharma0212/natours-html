@@ -1407,6 +1407,9 @@ body {
   @media only screen and (max-width: 56.25em) {
     .section-about {
       padding: 20rem 0; } }
+  @media (min-height: 800px) {
+    .section-about {
+      padding: 25rem 0; } }
 
 .section-features {
   padding: 20rem 0;
